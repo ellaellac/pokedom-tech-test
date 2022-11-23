@@ -1,7 +1,7 @@
 import { pokemonArray } from "./data/pokemon.js";
 console.log(pokemonArray);
 
-const cardContainer = document.getElementsByClassName("card-container");
+const cardContainer = document.querySelector(".card-container");
 
 //ID, Name, Types, Sprite's Array
 const pokemonID = pokemonArray.map((element) => element.id);
@@ -13,7 +13,7 @@ const pokemonSprite = pokemonArray.map((element) => element.sprite);
 const createPokemonCard = (id, name, type, sprite) => {
   let htmlString = `
     <div class="card">
-        <div class="card__image">${sprite}</div>
+        <img class="card__image" src=${sprite}>
         <div class="card__content">
             <h3 class="card__heading ">${name}</h3>
             <p class="card__text">${name} (#${id}) is a ${type} pokemon</p>
