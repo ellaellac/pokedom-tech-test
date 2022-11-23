@@ -21,3 +21,13 @@ const createPokemonCard = (id, name, type, sprite) => {
     </div>`;
   return htmlString;
 };
+
+//get all cards
+for (let i = 0; i < pokemonArray.length; i++) {
+  const id = pokemonID[i];
+  const name = pokemonName[i];
+  const type = pokemonTypes[i];
+  const sprite = pokemonSprite[i];
+
+  cardContainer.innerHTML += createPokemonCard(id, name, type, sprite);
+}
