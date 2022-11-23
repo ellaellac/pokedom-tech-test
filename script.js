@@ -1,7 +1,10 @@
 import { pokemonArray } from "./data/pokemon.js";
 console.log(pokemonArray);
 
+//Varibales
 const cardContainer = document.querySelector(".card-container");
+const searchButton = document.querySelector("#button");
+const inputText = document.getElementById("text");
 
 //ID, Name, Types, Sprite's Array
 const pokemonID = pokemonArray.map((element) => element.id);
@@ -31,3 +34,17 @@ for (let i = 0; i < pokemonArray.length; i++) {
 
   cardContainer.innerHTML += createPokemonCard(id, name, type, sprite);
 }
+
+//filter name
+const searchFunction = () => {
+  const string = inputText.value;
+  const match = pokemonName.filter((element) => element.includes(string));
+  console.log(string);
+  console.log(match);
+
+  if (string == match) {
+    return;
+  }
+};
+
+searchButton.addEventListener("click", searchFunction);
